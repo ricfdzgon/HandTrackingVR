@@ -27,6 +27,11 @@ namespace Oculus.Interaction
         [SerializeField]
         private int _maxGrabPoints = -1;
 
+        private bool isGravity;
+        private bool isKinematic;
+        private Rigidbody rb;
+        public bool activeRemoveGravity;
+
         public int MaxGrabPoints
         {
             get
@@ -80,6 +85,10 @@ namespace Oculus.Interaction
             }
 
             this.EndStart(ref _started);
+
+            rb = GetComponent<Rigidbody>();
+            isGravity = rb.useGravity;
+            isKinematic = rb.isKinematic;
         }
 
         public override void ProcessPointerEvent(PointerArgs args)
@@ -145,6 +154,16 @@ namespace Oculus.Interaction
                 return;
             }
 
+            if (isGravity && activeRemoveGravity)
+            {
+                rb.useGravity = false;
+            }
+
+            if (!rb.isKinematic && activeRemoveGravity)
+            {
+                rb.isKinematic = true;
+            }
+
             _activeTransformer.BeginTransform();
         }
 
@@ -164,6 +183,13 @@ namespace Oculus.Interaction
             {
                 return;
             }
+
+            if (activeRemoveGravity)
+            {
+                rb.useGravity = isGravity;
+                rb.isKinematic = isKinematic;
+            }
+
             _activeTransformer.EndTransform();
             _activeTransformer = null;
         }
