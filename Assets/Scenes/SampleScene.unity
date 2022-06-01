@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 61228575}
   - component: {fileID: 61228574}
   - component: {fileID: 61228573}
+  - component: {fileID: 61228582}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -238,7 +239,7 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 61228582}
   _twoGrabTransformer: {fileID: 0}
   _maxGrabPoints: -1
   activeRemoveGravity: 1
@@ -334,6 +335,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &61228582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61228572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9597e632dfbca247bcf65e49c67078e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 1
+    MinX:
+      Constrain: 0
+      Value: 0
+    MaxX:
+      Constrain: 1
+      Value: 0.5
+    MinY:
+      Constrain: 0
+      Value: 0
+    MaxY:
+      Constrain: 1
+      Value: 0.5
+    MinZ:
+      Constrain: 1
+      Value: 0
+    MaxZ:
+      Constrain: 1
+      Value: 0
 --- !u!4 &67387080 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5968356590248818070, guid: 2f94427b8dd14ea498fd92aee3ec9f0f, type: 3}
@@ -882,6 +915,7 @@ GameObject:
   - component: {fileID: 590670893}
   - component: {fileID: 590670892}
   - component: {fileID: 590670891}
+  - component: {fileID: 590670900}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -981,7 +1015,7 @@ MonoBehaviour:
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
+  _twoGrabTransformer: {fileID: 590670900}
   _maxGrabPoints: -1
   activeRemoveGravity: 1
 --- !u!54 &590670895
@@ -1076,6 +1110,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590670900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590670890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 1
+    MinScale:
+      Constrain: 1
+      Value: 0.5
+    MaxScale:
+      Constrain: 1
+      Value: 2
 --- !u!4 &609538632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4484591312116288, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
